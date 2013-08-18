@@ -298,7 +298,7 @@ set backspace=eol,start,indent
 set whichwrap+=<,>
 
 "Ignore case when searching
-"set ignorecase
+set ignorecase
 
 "Include search
 set incsearch
@@ -410,12 +410,12 @@ map <silent> <leader>cd :cd %:p:h<cr>
 "vnoremap @w <esc>`>a"<esc>`<i"<esc>
 
 "Map auto complete of (, ", ', [
-"inoremap @1 ()<esc>:let leavechar=")"<cr>i
-"inoremap @2 []<esc>:let leavechar="]"<cr>i
-"inoremap @3 {}<esc>:let leavechar="}"<cr>i
-"inoremap @4 {<esc>o}<esc>:let leavechar="}"<cr>O
-"inoremap @q ''<esc>:let leavechar="'"<cr>i
-"inoremap @w ""<esc>:let leavechar='"'<cr>i
+inoremap @1 ()<esc>:let leavechar=")"<cr>i
+inoremap @2 []<esc>:let leavechar="]"<cr>i
+inoremap @3 {}<esc>:let leavechar="}"<cr>i
+inoremap @4 {<esc>o}<esc>:let leavechar="}"<cr>O
+inoremap @q ''<esc>:let leavechar="'"<cr>i
+inoremap @w ""<esc>:let leavechar='"'<cr>i
 "au BufNewFile,BufRead *.\(vim\)\@! inoremap " ""<esc>:let leavechar='"'<cr>i
 "au BufNewFile,BufRead *.\(txt\)\@! inoremap ' ''<esc>:let leavechar="'"<cr>i
 
@@ -706,6 +706,11 @@ nmap <C-@>d :cs find d <C-R>=expand("<cword>")<CR><CR>
    function! NERDTree_IsValid()
      return 1 
    endfunction
+
+   """"""""""""""""""""""""""""""
+   " NERD_commenter setting
+   """"""""""""""""""""""""""""""
+
    """"""""""""""""""""""""""""""
    " miniBufExplorer setting
    """"""""""""""""""""""""""""""
