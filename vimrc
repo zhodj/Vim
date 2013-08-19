@@ -3,7 +3,7 @@
 "       http://amix.dk/vim/vimrc.html
 " and Easwy Yang:
 "       http://github.com/easwy/share/tree/master/vim/vimrc/
-" Thanks for them!
+" Thanks them for their work!
 " Maintainer: zhodj 
 " Last Change: Sun Aug 18 18:19:15 CST 2013
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
