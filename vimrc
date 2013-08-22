@@ -414,6 +414,7 @@ inoremap @1 ()<esc>:let leavechar=")"<cr>i
 inoremap @2 []<esc>:let leavechar="]"<cr>i
 inoremap @3 {}<esc>:let leavechar="}"<cr>i
 inoremap @4 {<esc>o}<esc>:let leavechar="}"<cr>O
+inoremap @5 <><esc>:let leavechar=">"<cr>i
 inoremap @q ''<esc>:let leavechar="'"<cr>i
 inoremap @w ""<esc>:let leavechar='"'<cr>i
 "au BufNewFile,BufRead *.\(vim\)\@! inoremap " ""<esc>:let leavechar='"'<cr>i
