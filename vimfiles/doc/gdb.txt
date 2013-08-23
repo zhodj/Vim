@@ -1,4 +1,4 @@
-*gdb.txt*    For Vim version 7.1.     Last change: 2007 July 20
+*gdb.txt*    For Vim version 7.3.     Last change: 2010 November 14
 
 
 			     VIM REFERENCE MANUAL
@@ -18,8 +18,6 @@ This document explains how to use Vim's GDB interface
 
 
 {Vi does not have any of these commands}
-
-VimGDB has been tested with GNU GDB 5.3, 6.0, 6.1.1, 6.2.1, 6.3 and 6.4.
 
 The GDB interface only works when Vim is compiled with the |+gdb| feature.
 

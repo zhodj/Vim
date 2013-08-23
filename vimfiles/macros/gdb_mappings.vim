@@ -7,26 +7,47 @@ if ! has("gdb")
 endif
 
 let s:gdb_k = 1
-nmap <F7> :call <SID>Toggle()<CR>
+function! ToggleGDB()
+    if getwinvar(0,'&statusline') != ""
+        :set autochdir
+        :cd %:p:h
+        :only
+        set statusline=
+        :call <SID>Toggle()
+    else
+        set statusline+=%F%m%r%h%w\ [POS=%04l,%04v]\ [%p%%]\ [LEN=%L]\ [FORMAT=%{&ff}]\ [TYPE=%Y]\ [ASCII=\%03.3b]\ [HEX=\%02.2B]
+        :set noautochdir
+        :call <SID>Toggle()
+    endif
+endfunction
+
+function! SToggleGDB()
+    :MiniBufExplorer
+    set statusline+=%F%m%r%h%w\ [POS=%04l,%04v]\ [%p%%]\ [LEN=%L]\ [FORMAT=%{&ff}]\ [TYPE=%Y]\ [ASCII=\%03.3b]\ [HEX=\%02.2B]
+    :call <SID>Toggle()
+endfunction
+nmap <F7>  :call ToggleGDB()<cr>
+nmap <S-F7>  :call <SID>Toggle()<cr>
+
+" nmap <S-F7>  :call SToggleGDB()<cr>
+" nmap <F7>  :call <SID>Toggle()<CR>
 
 " Toggle between vim default and custom mappings
 function! s:Toggle()
     if s:gdb_k
-        let s:gdb_k = 0
-
-        " easwy add
-        if ! exists("g:vimgdb_debug_file")
-            let g:vimgdb_debug_file = ""
+	let s:gdb_k = 0
+        "zhodj add
+        if !exists("g:vimgdb_debug_file")
+          let g:vimgdb_debug_file = ""
         elseif g:vimgdb_debug_file == ""
-            call inputsave()
-            let g:vimgdb_debug_file = input("File: ", "", "file")
-            call inputrestore()
+          call inputsave()
+          let g:vimgdb_debug_file = input("File: ", "", "file")
+          call inputrestore()
         endif
         call gdb("file " . g:vimgdb_debug_file)
-        " easwy end
-
-        map <Space> :call gdb("")<CR>
-        nmap <silent> <C-Z> :call gdb("\032")<CR>
+        "end zhodj 
+	map <Space> :call gdb("")<CR>
+	nmap <silent> <C-Z> :call gdb("\032")<CR>
 
 	nmap <silent> B :call gdb("info breakpoints")<CR>
 	nmap <silent> L :call gdb("info locals")<CR>
@@ -63,11 +84,9 @@ function! s:Toggle()
     " Restore vim defaults
     else
 	let s:gdb_k = 1
-
-        " easwy add
+        "zhodj add
         call gdb("quit")
-        " end easwy
-
+        "end zhodj
 	nunmap <Space>
 	nunmap <C-Z>
 
@@ -115,5 +134,6 @@ function! s:Breakpoint(cmd)
 endfunction
 
 " map vimGdb keys
-" call s:Toggle()
+"call s:Toggle()
+
 
