@@ -4,9 +4,9 @@
 " and Easwy Yang:
 "       http://github.com/easwy/share/tree/master/vim/vimrc/
 " Thanks them for their work!
-" Maintainer: zhodj 
+" Maintainer: zhodj
 " Change: Add neocomplcache.vim  Aug 23 2013
-" Last Change: Fri Aug 23 13:37:19 CST 2013
+" Last Change: Sat Aug 24 22:20:38 CST 2013
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -35,38 +35,38 @@ set history=400
 " Chinese
 " multi-encoding setting
 if has("multi_byte")
-  "set bomb 
-  set fileencodings=ucs-bom,utf-8,cp936,gb18030,big5,euc-jp,sjis,euc-kr,ucs-2le,latin1 
-  " CJK environment detection and corresponding setting 
-  if v:lang =~ "^zh_CN" 
-    " Use cp936 to support GBK, euc-cn == gb2312 
-    set encoding=chinese 
-    set termencoding=chinese 
-    set fileencoding=chinese 
-  elseif v:lang =~ "^zh_TW" 
-    " cp950, big5 or euc-tw 
-    " Are they equal to each other? 
-    set encoding=taiwan 
-    set termencoding=taiwan 
-    set fileencoding=taiwan 
-  "elseif v:lang =~ "^ko" 
-  "  " Copied from someone's dotfile, untested 
-  "  set encoding=euc-kr 
-  "  set termencoding=euc-kr 
-  "  set fileencoding=euc-kr 
-  "elseif v:lang =~ "^ja_JP" 
-  "  " Copied from someone's dotfile, untested 
-  "  set encoding=euc-jp 
-  "  set termencoding=euc-jp 
-  "  set fileencoding=euc-jp 
-  endif 
-  " Detect UTF-8 locale, and replace CJK setting if needed 
-  if v:lang =~ "utf8$" || v:lang =~ "UTF-8$" 
-    set encoding=utf-8 
-    set termencoding=utf-8 
-    set fileencoding=utf-8 
-  endif 
-endif 
+  "set bomb
+  set fileencodings=ucs-bom,utf-8,cp936,gb18030,big5,euc-jp,sjis,euc-kr,ucs-2le,latin1
+  " CJK environment detection and corresponding setting
+  if v:lang =~ "^zh_CN"
+    " Use cp936 to support GBK, euc-cn == gb2312
+    set encoding=chinese
+    set termencoding=chinese
+    set fileencoding=chinese
+  elseif v:lang =~ "^zh_TW"
+    " cp950, big5 or euc-tw
+    " Are they equal to each other?
+    set encoding=taiwan
+    set termencoding=taiwan
+    set fileencoding=taiwan
+  "elseif v:lang =~ "^ko"
+  "  " Copied from someone's dotfile, untested
+  "  set encoding=euc-kr
+  "  set termencoding=euc-kr
+  "  set fileencoding=euc-kr
+  "elseif v:lang =~ "^ja_JP"
+  "  " Copied from someone's dotfile, untested
+  "  set encoding=euc-jp
+  "  set termencoding=euc-jp
+  "  set fileencoding=euc-jp
+  endif
+  " Detect UTF-8 locale, and replace CJK setting if needed
+  if v:lang =~ "utf8$" || v:lang =~ "UTF-8$"
+    set encoding=utf-8
+    set termencoding=utf-8
+    set fileencoding=utf-8
+  endif
+endif
 "if MySys() == "windows"
    "set encoding=utf-8
    "set langmenu=zh_CN.UTF-8
@@ -188,7 +188,7 @@ if MySys() == 'windows'
 endif
 
 "automaticsly wirte back the comments
-set autowrite 
+set autowrite
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Colors and Fonts
@@ -234,7 +234,7 @@ map <leader>$ :syntax sync fromstart<cr>
 autocmd BufEnter * :syntax sync fromstart
 
 " CTRL-C
-"vnoremap <C-C> "+y
+vnoremap <C-C> "+y
 
 " Use CTRL-Q to do what CTRL-V used to do
 "noremap <C-Q>		<C-V>
@@ -378,8 +378,8 @@ map <leader>bd :Bclose<cr>
 "map <down> <leader>bd
 
 "Use the arrows to something usefull
-"map <right> :bn<cr>
-"map <left> :bp<cr>
+map <right> :bn<cr>
+map <left> :bp<cr>
 
 "Tab configuration
 map <leader>tn :tabnew
@@ -431,7 +431,7 @@ inoremap @w ""<esc>:let leavechar='"'<cr>i
 "My information
 "iab xdates <c-r>=strftime("%b %d, %Y")<cr>
 "iab xdate <c-r>=strftime("%a %b %d %H:%M:%S %Z %Y")<cr>
-"iab xname Easwy Yang
+"iab xname zhodj
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -693,20 +693,20 @@ nmap <C-@>d :cs find d <C-R>=expand("<cword>")<CR><CR>
    nmap <C-W><C-B> :BottomExplorerWindow<cr>
    nmap <silent> <leader>wm :WMToggle<cr>
    autocmd BufWinEnter \[Buf\ List\] setl nonumber
-   autocmd VimEnter * WMToggle 
+   autocmd VimEnter * WMToggle
 
    """"""""""""""""""""""""""""""
    " NERDTree setting
    """"""""""""""""""""""""""""""
    nmap <silent> <leader>tt :NERDTreeToggle<cr>
-   
+
    let g:NERDTree_title = "[NERDTree]"
    function! NERDTree_Start()
      exec 'NERDTree'
    endfunction
 
    function! NERDTree_IsValid()
-     return 1 
+     return 1
    endfunction
 
    """"""""""""""""""""""""""""""
@@ -718,9 +718,9 @@ nmap <C-@>d :cs find d <C-R>=expand("<cword>")<CR><CR>
    """"""""""""""""""""""""""""""
    " miniBufExplorer setting
    """"""""""""""""""""""""""""""
-   let g:miniBufExplMapWindowNavVim = 1 
-   let g:miniBufExplMapWindowNavArrows = 1 
-   let g:miniBufExplMapCTabSwitchBufs = 1 
+   let g:miniBufExplMapWindowNavVim = 1
+   let g:miniBufExplMapWindowNavArrows = 1
+   let g:miniBufExplMapCTabSwitchBufs = 1
    let g:miniBufExplModSelTarget = 1
    let g:miniBufExplMoreThanOne = 0
 
@@ -888,8 +888,8 @@ nmap <C-@>d :cs find d <C-R>=expand("<cword>")<CR><CR>
    " FeralToggleCommentify setting
    """"""""""""""""""""""""""""""
    let loaded_feraltogglecommentify = 1
-   "map <silent> <leader>tc :call ToggleCommentify()<CR>j 
-   "imap <M-c> <ESC>:call ToggleCommentify()<CR>j 
+   "map <silent> <leader>tc :call ToggleCommentify()<CR>j
+   "imap <M-c> <ESC>:call ToggleCommentify()<CR>j
 
    """"""""""""""""""""""""""""""
    " vimgdb setting
@@ -955,6 +955,7 @@ nmap <C-@>d :cs find d <C-R>=expand("<cword>")<CR><CR>
    """""""""""""""""""""""""""""""
    autocmd FileType c,cpp,xml  map <buffer> <leader><space> :make<cr>
    "autocmd FileType c,cpp  setl foldmethod=syntax | setl fen
+   nmap <Leader>; $a;<Esc>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " MISC
@@ -980,7 +981,7 @@ nmap <C-@>d :cs find d <C-R>=expand("<cword>")<CR><CR>
    vmap <silent> <leader>lv :lv /<c-r>=<sid>GetVisualSelection()<cr>/ %<cr>:lw<cr>
 
    " Fast diff
-   "cmap @vd vertical diffsplit 
+   "cmap @vd vertical diffsplit
    set diffopt+=vertical
 
    "Remove the Windows ^M
@@ -996,7 +997,7 @@ nmap <C-@>d :cs find d <C-R>=expand("<cword>")<CR><CR>
    "inoremap <C-v> <esc>:set paste<cr>mui<C-R>+<esc>mv'uV'v=:set nopaste<cr>
 
    "Fast Ex command
-   "nnoremap ; :
+   nnoremap ; :
 
    "For mark move
    "nnoremap <leader>' '
