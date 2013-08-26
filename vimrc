@@ -6,7 +6,7 @@
 " Thanks them for their work!
 " Maintainer: zhodj
 " Change: Add neocomplcache.vim  Aug 23 2013
-" Last Change: Sat Aug 24 22:20:38 CST 2013
+" Last Change: Mon Aug 26 10:11:17 CST 2013  
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -429,11 +429,12 @@ inoremap @w ""<esc>:let leavechar='"'<cr>i
 " General Abbrevs
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "My information
-"iab xdates <c-r>=strftime("%b %d, %Y")<cr>
-"iab xdate <c-r>=strftime("%a %b %d %H:%M:%S %Z %Y")<cr>
-"iab xname zhodj
+iab xdates <c-r>=strftime("%b %d, %Y")<cr>
+iab xdate <c-r>=strftime("%a %b %d %H:%M:%S %Z %Y")<cr>
+iab xname zhodj
 
-
+"Useful Abbrevs
+iab #i #include
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Editing mappings etc.
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
