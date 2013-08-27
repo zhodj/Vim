@@ -93,10 +93,10 @@ nmap <silent> <leader>ww :w<cr>
 nmap <silent> <leader>wf :w!<cr>
 
 "Fast quiting
-nmap <silent> <leader>qw :wq<cr>
-nmap <silent> <leader>qf :q!<cr>
-nmap <silent> <leader>qq :q<cr>
-nmap <silent> <leader>qa :qa<cr>
+nmap <silent> <leader>qw :confirm wq<cr>
+nmap <silent> <leader>qf :confirm q!<cr>
+nmap <silent> <leader>qq :confirm q<cr>
+nmap <silent> <leader>qa :confirm qa<cr>
 
 "Fast remove highlight search
 nmap <silent> <leader><cr> :noh<cr>
@@ -332,7 +332,7 @@ set novb t_vb=
   endfunction
 
   "Format the statusline
-  "set statusline=\ %F%m%r%h\ %w\ \ CWD:\ %r%{CurDir()}%h\ \ \ Line:\ %l/%L:%c
+  set statusline=\ %F%m%r%h\ %w\ \ CWD:\ %r%{CurDir()}%h\ \ \ Line:\ %l/%L:%c
 
 
 
