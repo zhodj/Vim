@@ -190,6 +190,9 @@ endif
 "automaticsly wirte back the comments
 set autowrite
 
+"ctags setting
+"catgs -R -f ~/.vim/systags --c-kinds=+p --fields=+S /usr/include /usr/local/include
+set tags=./tags,~/.vim/systags
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Colors and Fonts
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
