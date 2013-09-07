@@ -78,12 +78,10 @@ if	s:MSWIN
 		"
 		" SYSTEM WIDE INSTALLATION
 		let g:C_Installation				= 'system'
-		"let s:plugin_dir						= $VIM.'/vimfiles'         
-		let s:plugin_dir						= $VIM                                              "modified by zhodj
+		let s:plugin_dir						= $VIM.'/vimfiles'         
 		let s:C_GlobalTemplateDir		= s:plugin_dir.'/c-support/templates'
 		let s:C_GlobalTemplateFile  = s:C_GlobalTemplateDir.'/Templates'
-		"let s:C_LocalTemplateFile		= $HOME.'/vimfiles/c-support/templates/Templates' "modified by zhodj
-		let s:C_LocalTemplateFile		= $HOME.'/c-support/templates/Templates'
+		let s:C_LocalTemplateFile		= $HOME.'/vimfiles/c-support/templates/Templates' 
 		let s:C_LocalTemplateDir		= fnamemodify( s:C_LocalTemplateFile, ":p:h" ).'/'
 	endif
 	"
@@ -101,7 +99,8 @@ else
 	else
 		" SYSTEM WIDE INSTALLATION
 		let g:C_Installation				= 'system'
-		let s:plugin_dir						= $VIM.'/vimfiles'
+		"let s:plugin_dir						= $VIM.'/vimfiles'
+		let s:plugin_dir						= $VIM              "modified by zhodj
 		let s:C_GlobalTemplateDir		= s:plugin_dir.'/c-support/templates'
 		let s:C_GlobalTemplateFile  = s:C_GlobalTemplateDir.'/Templates'
 		let s:C_LocalTemplateFile		= $HOME.'/.vim/c-support/templates/Templates'
