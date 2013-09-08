@@ -43,52 +43,52 @@
 #include "<CURSOR>"
 §-------------------------------------------------------------------------
 == Preprocessor.define == map:pd, shortcut:d, insert ==
-#define	<CURSOR>			/*  */
+#define	<CURSOR>
 §-------------------------------------------------------------------------
 == Preprocessor.undefine == map:pu, shortcut:u, insert ==
-#undef	<CURSOR>			/*  */
+#undef	<CURSOR>
 §-------------------------------------------------------------------------
-== Preprocessor.if-endif == map:pif, shortcut:i ==
-#if  |?CONDITION:u|
+== Preprocessor.if-endif == map:pif, shortcut:i, insert ==
+#if |?CONDITION:u|
 <CURSOR><SPLIT>
-#endif     /* -----  |CONDITION|  ----- */
+#endif     
 §-------------------------------------------------------------------------
-== Preprocessor.if-else-endif == map:pie, shortcut:i ==
-#if  |?CONDITION:u|
+== Preprocessor.if-else-endif == map:pie, shortcut:i, insert ==
+#if |?CONDITION:u|
 <CURSOR><SPLIT>
-#else      /* -----  not |CONDITION|  ----- */
-<+ELSE PART+>
-#endif     /* -----  not |CONDITION|  ----- */
+#else      
+|?ELSE PART|
+#endif     
 §-------------------------------------------------------------------------
-== Preprocessor.ifdef-else-endif == map:pid, shortcut:f ==
-#ifdef  |?CONDITION:u|
+== Preprocessor.ifdef-else-endif == map:pid, shortcut:f, insert ==
+#ifdef |?CONDITION:u|
 <CURSOR><SPLIT>
-#else      /* -----  not |CONDITION|  ----- */
-<+ELSE PART+>
-#endif     /* -----  not |CONDITION|  ----- */
+#else
+|?ELSE PART|
+#endif
 §-------------------------------------------------------------------------
-== Preprocessor.ifndef-else-endif == map:pin, shortcut:n ==
-#ifndef  |?CONDITION:u|
+== Preprocessor.ifndef-else-endif == map:pin, shortcut:n, insert ==
+#ifndef |?CONDITION:u|
 <CURSOR><SPLIT>
-#else      /* -----  not |CONDITION|  ----- */
-<+ELSE PART+>
-#endif     /* -----  not |CONDITION|  ----- */
+#else
+|?ELSE PART|
+#endif
 §-------------------------------------------------------------------------
-== Preprocessor.ifndef-def-endif == map:pind, shortcut:e ==
-#ifndef  |?BASENAME:L|_INC
-#define  |BASENAME|_INC
+== Preprocessor.ifndef-def-endif == map:pind, shortcut:e, insert ==
+#ifndef |?BASENAME:L|_INC
+#define |BASENAME|_INC
 <CURSOR><SPLIT>
-#endif   /* ----- #ifndef |BASENAME|_INC  ----- */
+#endif
 §-------------------------------------------------------------------------
-== Preprocessor.error == map:pe, shortcut:o ==
-#error	"<CURSOR>"			/*  */
+== Preprocessor.error == map:pe, shortcut:o, insert ==
+#error "<CURSOR>"
 §-------------------------------------------------------------------------
-== Preprocessor.line == map:pli, shortcut:l ==
-#line	<CURSOR>			/*  */
+== Preprocessor.line == map:pli, shortcut:l, insert ==
+#line <CURSOR>
 §-------------------------------------------------------------------------
-== Preprocessor.pragma == map:pp, shortcut:p ==
-#pragma	<CURSOR>			/*  */
+== Preprocessor.pragma == map:pp, shortcut:p, insert ==
+#pragma	<CURSOR>	
 §-------------------------------------------------------------------------
-== Preprocessor.warning == map:pw, shortcut:w ==
-#warning	<CURSOR>			/*  */
+== Preprocessor.warning == map:pw, shortcut:w, insert ==
+#warning <CURSOR>
 §-------------------------------------------------------------------------

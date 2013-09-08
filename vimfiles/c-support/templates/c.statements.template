@@ -1,64 +1,64 @@
-== Statements.do while == map:sd, shortcut:d  ==
-do {
-<SPLIT>} while ( <CURSOR> );				/* -----  end do-while  ----- */
-== Statements.for == map:sf, shortcut:o  ==
-for ( <CURSOR>; ; )
+== Statements.do while == map:sd, shortcut:d, insert ==
+do{
+<SPLIT>}while(|?WHILE_CONDITION|);				
+== Statements.for == map:sf, shortcut:o, insert ==
+for(<CURSOR>; ;)
 §
 § The names INIT, CONDITION, INCREMENT, and 'for block' are used by the main
 § plugin plugin/c.vim . Please do not change.
 §
-== Statements.for block == map:sfo, shortcut:r  ==
+== Statements.for block == map:sfo, shortcut:r, insert ==
 |DefaultMacro( 'CONDITION', '{+CONDITION+}' )|
 |DefaultMacro( 'INCREMENT', '{+INCREMENT+}' )|
-for ( |INIT|<CURSOR>; |CONDITION|; |INCREMENT| ) {
+for(|INIT|<CURSOR>; |CONDITION|; |INCREMENT|){
 <SPLIT>}
-== Statements.range-based for == map:sfr, shortcut:a  ==
-for ( <CURSOR>: <-EXPRESSION-> ){
+== Statements.range-based for == map:sfr, shortcut:a, insert ==
+for(<CURSOR>: |?EXPRESSION|){
 <SPLIT>}
-== Statements.if == map:si, shortcut:i  ==
-if ( <CURSOR> )
-== Statements.if block == map:sif, shortcut:f  ==
-if ( <CURSOR> ) {
-<SPLIT><-IF_PART->
+== Statements.if == map:si, shortcut:i, insert ==
+if(<CURSOR>)
+== Statements.if block == map:sif, shortcut:f, insert ==
+if(<CURSOR>){
+<SPLIT>|?IF_PART|
 }
-== Statements.if else == map:sie, shortcut:e  ==
-if ( <CURSOR> )
+== Statements.if else == map:sie, shortcut:e, insert ==
+if(<CURSOR>)
 <SPLIT>else
-== Statements.if block else == map:sife, shortcut:l  ==
-if ( <CURSOR> ) {
-<SPLIT><-IF_PART->
+== Statements.if block else == map:sife, shortcut:l, insert ==
+if(<CURSOR>){
+<SPLIT>|?IF_PART|
 }
-else {
-<-ELSE_PART->
+else{
+|?ELSE_PART|
 }
-== Statements.else block == map:se, shortcut:e  ==
-else {
+== Statements.else block == map:se, shortcut:e, insert ==
+else{
 <CURSOR><SPLIT>
 }
-== Statements.while == map:sw, shortcut:w  ==
-while ( <CURSOR> )
-== Statements.while block == map:swh, shortcut:h  ==
-while ( <CURSOR> ) {
+== Statements.while == map:sw, shortcut:w, insert ==
+while(<CURSOR>)
+== Statements.while block == map:swh, shortcut:h, insert ==
+while(<CURSOR>){
 <SPLIT>}
-== Statements.switch == map:ss, shortcut:s  ==
-switch ( <CURSOR> ) {
-	case <-LABEL->:	
+== Statements.switch == map:ss, shortcut:s, insert ==
+switch(<CURSOR>){
+	case |?LABEL_1|:	
 		<SPLIT>break;
 
-	case <-LABEL->:	
+	case |?LABEL_2|:	
 		break;
 
-	case <-LABEL->:	
+	case |?LABEL_3|:	
 		break;
 
 	default:	
 		break;
-}				/* -----  end switch  ----- */
-== Statements.case == map:sc, shortcut:c  ==
+}		
+== Statements.case == map:sc, shortcut:c, insert ==
 case <CURSOR>:	
 break;
 
-== Statements.block == map:sb, shortcut:b  ==
+== Statements.block == map:sb, shortcut:b, insert ==
 {
 <CURSOR><SPLIT>
 }
