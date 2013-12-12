@@ -195,9 +195,9 @@ set autowrite
 set tags=./tags,~/.vim/systags
 
 "Define a command to make it easier to use (ack and replace the quickfix)
-command! -nargs=+ qfdo call qfdo(<q-args>)
+command! -nargs=+ Qfdo call Qfdo(<q-args>)
 "Function that does work
-function! qfdo(command)
+function! Qfdo(command)
   "Create a dictionary so that we can get the list of buffers rather than the
   "list of lines in buffers(easy way to get unique entries)
   let buffer_numbers = {}
