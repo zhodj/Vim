@@ -193,6 +193,26 @@ set autowrite
 "ctags setting
 "ctags -R -f ~/.vim/systags --c-kinds=+p --fields=+S /usr/include /usr/local/include
 set tags=./tags,~/.vim/systags
+
+"Define a command to make it easier to use (ack and replace the quickfix)
+command! -nargs=+ qfdo call qfdo(<q-args>)
+"Function that does work
+function! qfdo(command)
+  "Create a dictionary so that we can get the list of buffers rather than the
+  "list of lines in buffers(easy way to get unique entries)
+  let buffer_numbers = {}
+  "for each entry, user the buffer number as a dictionary key(won't get repeats)
+  for fixlist_entry in getqflist()
+    let buffer_numbers[fixlist_entry['bufnr']] = 1 
+  endfor
+  let buffer_number_list = keys(buffer_numbers)
+  for num in buffer_number_list
+    exe 'buffer' num
+    exe a:command
+    update
+  endfor
+endfunction
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Colors and Fonts
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -421,6 +441,7 @@ inoremap @4 {<esc>o}<esc>:let leavechar="}"<cr>O
 inoremap @5 <><esc>:let leavechar=">"<cr>i
 inoremap @q ''<esc>:let leavechar="'"<cr>i
 inoremap @w ""<esc>:let leavechar='"'<cr>i
+inoremap @e //<esc>:let leavechar='/'<cr>i
 "au BufNewFile,BufRead *.\(vim\)\@! inoremap " ""<esc>:let leavechar='"'<cr>i
 "au BufNewFile,BufRead *.\(txt\)\@! inoremap ' ''<esc>:let leavechar="'"<cr>i
 
