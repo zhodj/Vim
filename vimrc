@@ -275,6 +275,8 @@ vnoremap <C-C> "+y
 "  hi CursorColumn guibg=#333333
 "endif
 
+"List contents of all registers (that typically contain pastable text)
+nnoremap <silent> "" :registers "0123456789abcdefghijklmnopqrstuvwxyz*+.<cr>
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Fileformats
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
